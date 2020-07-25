@@ -3,7 +3,7 @@ layout: center-top
 transition: none
 
 # Look-and-Feel
-theme: night
+theme: Beige
 theme-override: assets/css/PITCHME.css
 code-line-numbers: true
 charts: true
