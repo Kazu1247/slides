@@ -1,0 +1,23 @@
+# Layout
+layout: center-top
+transition: none
+
+# Look-and-Feel
+theme: moon
+theme-override: assets/css/PITCHME.css
+code-line-numbers: true
+charts: true
+
+logo: ""
+footnote: ""
+
+# Analyize & Share
+gatoken: ""
+title: ""
+description: ""
+# thumbnail :
+
+# theme : night
+highlight: monokai-sublime
+slide-number: true
+# transition : fade
