@@ -126,13 +126,15 @@
 
 ### 例えば、
 
-@snap[west]
+<br>
+
+@snap[west span-45]
 
 ![alt](assets/images/ComponentsImage.png)
 
 @snapend
 
-@snap[east]
+@snap[east span-60]
 
 ここで、document.title を設定するためのロジックが componentDidMount と componentDidUpdate に分離してしまっていることに注意してください。データ購読のためのロジックもやはり componentDidMount と componentWillUnmount とに分離しています。そして componentDidMount には両方の仕事のためのコードが含まれています。
 
