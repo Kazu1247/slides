@@ -1,6 +1,3 @@
 ## slides
 
-[テストmaster](https://gitpitch.com/Kazu1247/slides/master)
-
-[テストdevelop](https://gitpitch.com/Kazu1247/slides/develop)
-
+[2020/7/31 関数コンポーネントと Hooks](https://gitpitch.com/Kazu1247/slides/develop)
