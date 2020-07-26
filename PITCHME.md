@@ -132,7 +132,7 @@
 
 @snapend
 
-@snap[east span-160]
+@snap[east span-50]
 
 - @size[0.5em](document.title を設定するためのロジックが componentDidMount と componentDidUpdate に分離している。)
 - @size[0.5em](データ購読のためのロジックもやはり componentDidMount と componentWillUnmount とに分離している。)
