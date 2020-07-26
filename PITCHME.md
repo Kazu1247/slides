@@ -124,11 +124,10 @@
 
 ---
 
-## 例えば、
+### 例えば、
 
 ![alt](assets/images/ComponentsImage.png)
 
-<br/>
 ここで、document.title を設定するためのロジックが componentDidMount と componentDidUpdate に分離してしまっていることに注意してください。データ購読のためのロジックもやはり componentDidMount と componentWillUnmount とに分離しています。そして componentDidMount には両方の仕事のためのコードが含まれています。
 
 ---
@@ -137,7 +136,6 @@
 
 ![alt](assets/images/FunctionalComponentExample.png)
 
-<br />
 フックを使うことで、ライフサイクルのメソッド名に基づくのではなく、実際に何をやっているのかに基づいてコードを分割できます。React はコンポーネントで利用されているすべての副作用を、指定されている順番で適用していきます。
 
 ---
