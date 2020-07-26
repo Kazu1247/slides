@@ -207,19 +207,36 @@
 
 ---
 
-## なんで？
+あと、ライフサイクルメソッドで前々から思っていた 🤔 な仕様がある
 
 ---
 
-## なんで？
+@snap[west span-45]
+![alt](assets/images/ComponentDidUpdate1.png)
+![alt](assets/images/ComponentDidUpdate2.png)
+@snapend@
+
+@snap[east span-50]
+@size[0.5em](ComponentDidUpdate なのに、毎回自分で、現在の state を props から渡される値の比較をして、それらが異な場合のみ処理を行うという保証を必ず行わなければいけない)
+@snapend
 
 ---
 
-## なんで？
+だが、Hooks を使えば
 
 ---
 
-## なんで？
+これでいける
+
+@snap[east span-50]
+![alt](assets/images/useEffect.png)
+@snapend
+
+@snap[east span-50]
+@size[0.5em](上記の例では、第 2 引数として [count] を渡しています。どういう意味でしょうか？ もし count が 5 で、次回のコンポーネントのレンダー時にも count がまだ 5 であった場合、React は前回のレンダー時に覚えておいた [5] と今回のレンダーの [5] とを比較します。配列内のすべての要素が同一 (5 === 5) ですので、React は副作用をスキップします。これが最適化です。
+再レンダー時に count が 6 に変更されている場合、前回レンダー時に覚えておいた [5] と今回のレンダー時の [6] という配列とを比較します。今回は 5 !== 6 ですので React は副作用を再適用します。配列内に複数の要素がある場合、React は配列内の要素のうちひとつでも変わっている場合に副作用を再実行します。
+)
+@snapend
 
 ---
 
