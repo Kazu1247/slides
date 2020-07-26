@@ -132,10 +132,10 @@
 
 @snapend
 
-@snap[east span-60]
+@snap[east span-160]
 
-- @size[0.5](document.title を設定するためのロジックが componentDidMount と componentDidUpdate に分離している。)
-- @size[0.3px](データ購読のためのロジックもやはり componentDidMount と componentWillUnmount とに分離している。)
+- @size[0.5em](document.title を設定するためのロジックが componentDidMount と componentDidUpdate に分離している。)
+- @size[0.5em](データ購読のためのロジックもやはり componentDidMount と componentWillUnmount とに分離している。)
 - @size[0.5em](そして componentDidMount には両方の仕事のためのコードが含まれている。)
 
 @snapend
