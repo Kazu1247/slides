@@ -235,7 +235,7 @@ use○○ というメソッド
         doSomething();
 
         return clearSomething();
-      }, [watchVar]);
+      }, [hogehoge]);
 
 ---
 
