@@ -239,11 +239,15 @@ use○○ というメソッド
     Live Code Presenting
     @snapend
 
-    ```js
+    ```
+
     useEffect(() => {
+
     doSomething();
+
     return clearSomething();
     }, []);
+
     ```
 
 ---
