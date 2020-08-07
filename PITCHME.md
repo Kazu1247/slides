@@ -231,14 +231,18 @@ use○○ というメソッド
 
     ```js
 
-useEffect(() => {
+    useEffect(() => {
 
-doSomething();
+    doSomething();
 
-return clearSomething();
-}, [watchVar]);
+    return clearSomething();
+    }, [watchVar]);
 
     ```
+
+    @[1]
+    @[2,3]
+    @[5-10]
 
 ---
 
