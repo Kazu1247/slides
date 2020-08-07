@@ -16,15 +16,19 @@
 
 ---
 
-## 負債を産みたくない
+(いつか)
+
+## リファクタリングしたいから
 
 ---
 
-## だからコンポーネントをちゃんと理解して適切な方法で実装したい
+## 特に container component の見通しがよくない
+
+ちなみに container/Exercise.tsx は 2200 行以上ある
 
 ---
 
-## コンポーネントって？
+## そもそもコンポーネントって？
 
 - 概念的には JavaScript の関数と似ている。props という任意の入力を受け取り、画面上に表示すべき要素を返す。
   <br />
@@ -38,6 +42,8 @@
 
 ---
 
+コンポーネントを
+<br />
 「定義の仕方」によって分けると、
 
 ---
@@ -54,11 +60,11 @@
 
 ---
 
-## Presentational Component
+## Presentational Component (見た目)
 
 <br />VS
 
-## Container Component
+## Container Component (ロジック)
 
 ---
 
