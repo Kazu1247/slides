@@ -112,16 +112,9 @@
 
 が導入されたから<br />（＝高機能になった）
 
----
-
-（ものすごく雑に表現してしまうと、）<br />
-関数コンポーネント + Hooks > クラスコンポーネント
-
----
-
-## Hooks とは
-
-use○○ というメソッド
+<br />
+<li>React Conf 2018 基調講演での Hooks の発表と α 版リリース</li>
+<li>2019 年 3 月にリリースされた React 16.8 で正式に盛り込まれた</li>
 
 ---
 
@@ -132,7 +125,13 @@ use○○ というメソッド
 - ただし、段階的にで良い
 - クラスコンポーネントも一生サポートしていく
 
-[React docs フックの導入](https://ja.reactjs.org/docs/hooks-intro.html)
+(https://ja.reactjs.org/docs/hooks-intro.html)
+
+---
+
+## Hooks とは
+
+use○○ というメソッド
 
 ---
 
