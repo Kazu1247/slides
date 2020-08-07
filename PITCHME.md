@@ -230,21 +230,15 @@ use○○ というメソッド
     @snapend
 
     ```js
-    var io = require('socket.io')(80);
-    var cfg = require('./config.json');
-    var tw = require('node-tweet-stream')(cfg);
 
-    tw.track('socket.io');
-    tw.track('javascript');
+useEffect(() => {
 
-    tw.on('tweet', function(tweet){
-      io.emit('tweet', tweet);
-    });
+doSomething();
+
+return clearSomething();
+}, [watchVar]);
+
     ```
-
-    @[1]
-    @[2,3]
-    @[5-10]
 
 ---
 
