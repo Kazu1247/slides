@@ -226,7 +226,7 @@ use○○ というメソッド
 ---
 
     @snap[north-east span-100 text-06 text-gray]
-    Live Code Presenting
+    useEffectを使ってみる
     @snapend
 
     ```
@@ -239,9 +239,7 @@ use○○ というメソッド
 
     ```
 
-    @[1]
-    @[2,3]
-    @[5-10]
+    @[1-7]
 
 ---
 
