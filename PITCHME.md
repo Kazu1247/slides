@@ -4,7 +4,7 @@
 
 ## -関数コンポーネントと Hooks の導入-
 
-2020/7/31 小林
+2020/8/7 小林
 
 ---
 
@@ -16,15 +16,19 @@
 
 ---
 
-## 負債を産みたくない
+(いつか)
+
+## リファクタリングしたいから
 
 ---
 
-## だからコンポーネントをちゃんと理解して適切な方法で実装したい
+## 特に container component の見通しがよくない
+
+ちなみに container/Exercise.tsx は 2200 行以上ある
 
 ---
 
-## コンポーネントって？
+## そもそもコンポーネントって？
 
 - 概念的には JavaScript の関数と似ている。props という任意の入力を受け取り、画面上に表示すべき要素を返す。
   <br />
@@ -32,12 +36,8 @@
 
 ---
 
-## コンポーネントの入れ子構造で構築されている
-
-![alt](assets/images/ComponentsImage.png)
-
----
-
+コンポーネントを
+<br />
 「定義の仕方」によって分けると、
 
 ---
@@ -54,17 +54,23 @@
 
 ---
 
-## Presentational Component
+## Presentational Component (見た目)
 
 <br />VS
 
-## Container Component
+## Container Component (ロジック)
 
 ---
 
-## 🏋🏻‍♀️1st Round
+🏋🏻‍♀️1st Round
 
-クラスコンポーネント VS 関数コンポーネント
+<br />
+
+## クラスコンポーネント
+
+<br />VS
+
+## 関数コンポーネント
 
 ---
 
@@ -88,7 +94,21 @@
 
 ---
 
-ここにライフサイクルメソッドの説明を簡単にいれる
+@snap[west span-45]
+
+![alt](assets/images/life.png)
+
+@snapend
+
+@snap[east span-50]
+
+- @size[1em](ComponentDidMount)
+- @size[1em](ComponentDidUpdate)
+- @size[1em](ComponentWillUnmount)
+  <br />
+- @size[0.5em](https://qiita.com/kawachi/items/092bfc281f88e3a6e456)
+
+@snapend
 
 ---
 
@@ -104,18 +124,11 @@
 
 ## Hooks
 
-が導入されたから<br />（＝高機能になった）
+が導入されたから（＝高機能になった）
 
----
-
-（ものすごく雑に表現してしまうと、）<br />
-関数コンポーネント + Hooks > クラスコンポーネント
-
----
-
-## Hooks とは
-
-use○○ というメソッド
+<br />
+<li>React Conf 2018 基調講演での Hooks の発表と α 版リリース</li>
+<li>2019 年 3 月にリリースされた React 16.8 で正式に盛り込まれた</li>
 
 ---
 
@@ -126,7 +139,23 @@ use○○ というメソッド
 - ただし、段階的にで良い
 - クラスコンポーネントも一生サポートしていく
 
-[React docs フックの導入](https://ja.reactjs.org/docs/hooks-intro.html)
+(https://ja.reactjs.org/docs/hooks-intro.html)
+
+---
+
+## Hooks とは
+
+use○○ というメソッド
+
+---
+
+## userState
+
+これで state を管理できる
+
+## useEffect
+
+これはライフサイクルメソッドのようなもの
 
 ---
 
@@ -134,10 +163,12 @@ use○○ というメソッド
 
 ---
 
-### 伝統的なクラスコンポーネントだと、
+### （伝統的な）クラスコンポーネントだと、
 
-- @size[0.5em](多くの場合、state を使ったロジックはコンポーネント内のあらゆる場所にあり、小さなコンポーネントに分割することが不可能)
-- @size[0.5em](この問題を解決するため、関連する機能（例えばデータの購読や取得）をライフサイクルメソッドによって無理矢理分割している)
+- @size[0.5em](state を使ったロジックはコンポーネント内のあらゆる場所に散在しがち)
+- @size[0.5em](小さなコンポーネントに分割することが不可能)
+- @size[0.5em](可読性が低くなりがち)
+- @size[0.5em](この問題を解決するため、ライフサイクルメソッドによって無理矢理分割している)
 
 ---
 
@@ -152,8 +183,8 @@ use○○ というメソッド
 @snap[east span-50]
 
 - @size[0.5em](document.title を設定するためのロジックが componentDidMount と componentDidUpdate に分離している。)
-- @size[0.5em](データ購読のためのロジックもやはり componentDidMount と componentWillUnmount とに分離している。)
-- @size[0.5em](そして componentDidMount には両方の仕事のためのコードが含まれている。)
+- @size[0.5em](データ購読のためのロジックも componentDidMount と componentWillUnmount とに分離している。)
+- @size[0.5em](componentDidMount には異なる種類の処理が書かれている。)
 
 @snapend
 
@@ -189,23 +220,11 @@ use○○ というメソッド
 
 ---
 
-### クラスコンポーネントではライフサイクルメソッドでタイミングを制御していたが、その保証は行ってくれるのか？
+クラスコンポーネントではライフサイクルメソッドで
 
----
+## タイミング
 
-@snap[west span-45]
-
-![alt](assets/images/ClassCompoenntExample.png)
-
-@snapend
-
-@snap[east span-50]
-
-@size[0.5em](コンポーネントが表示されている最中に friend プロパティが変わったらどうなるのか？)<br />
-@size[0.5em](このコンポーネントは間違ったフレンドのオンラインステータスを表示し続けてしまいます（バグ）。)<br />
-@size[0.5em](クラスコンポーネントの場合は、このようなケースに対処するために componentDidUpdate を加える必要がありました。)
-
-@snapend
+を制御していたが、その保証は行ってくれるのか？
 
 ---
 
@@ -213,50 +232,61 @@ use○○ というメソッド
 
 ---
 
-- useEffect は<b>デフォルトで更新を処理</b>するため、更新のための特別なコードは不要
-- 新しい副作用を適用する前に、ひとつ前の副作用をクリーンアップする
+@snap[west span-45]
 
----
+![alt](assets/images/useEffect.png)
 
-あと、ライフサイクルメソッドで前々から思っていた 🤔 な仕様がある
+@snapend
+
+@snap[east span-50]
+
+- @size[0.5em](第一引数に、引数なしの関数を設定（doSomething）。レンダリング時に実行される)
+- @size[0.5em](戻り値を設定するとコンポーネントのアンマウント時に実行される)
+- @size[0.5em](第二引数は配列で指定（省略可能）)
+- @size[0.5em](そこに任意の変数を入れておくと、その値が前回のレンダリング時と変わらなければ第一引数で渡された関数の実行がキャンセルされることになる)
+
+@snapend
 
 ---
 
 @snap[west span-45]
-![alt](assets/images/ComponentDidUpdate1.png)
-![alt](assets/images/ComponentDidUpdate2.png)
-@snapend@
+
+![alt](assets/images/useEffect3.png)
+
+@snapend
 
 @snap[east span-50]
-@size[0.5em](ComponentDidUpdate なのに、毎回自分で、現在の state を props から渡される値の比較をして、それらが異な場合のみ処理を行うという保証を必ず行わなければいけない)
+
+- @size[0.5em](第二引数は省略するとレンダリング時の毎回doSomethingは実行される)
+
 @snapend
 
 ---
 
-だが、Hooks を使えば
+@snap[west span-45]
 
----
+![alt](assets/images/useEffect2.png)
 
-これでいける
-
-@snap[east span-50]
-![alt](assets/images/useEffect.png)
 @snapend
 
 @snap[east span-50]
-@size[0.5em](上記の例では、第 2 引数として [count] を渡しています。どういう意味でしょうか？ もし count が 5 で、次回のコンポーネントのレンダー時にも count がまだ 5 であった場合、React は前回のレンダー時に覚えておいた [5] と今回のレンダーの [5] とを比較します。配列内のすべての要素が同一 (5 === 5) ですので、React は副作用をスキップします。これが最適化です。
-再レンダー時に count が 6 に変更されている場合、前回レンダー時に覚えておいた [5] と今回のレンダー時の [6] という配列とを比較します。今回は 5 !== 6 ですので React は副作用を再適用します。配列内に複数の要素がある場合、React は配列内の要素のうちひとつでも変わっている場合に副作用を再実行します。
-)
+
+- @size[0.5em](第二引数にから配列を渡す、初回のレンダリング時にのみdoSomethingが実行される)
+
 @snapend
 
 ---
 
-## なんで？
+## クラスコンポーネント
+
+→ このライフサイクルのタイミングでこの処理とこの処理を実行する
+
+## Effect Hook
+
+→ この処理を実行したいのはこれとこれのタイミングだ
 
 ---
 
-## なんで？
+ご清聴、ありがとうございました！
 
 ---
-
-## なんで？
