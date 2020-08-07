@@ -246,7 +246,7 @@ use○○ というメソッド
     doSomething();
 
     return clearSomething();
-    }, []);
+    });
 
     ```
 
