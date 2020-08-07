@@ -217,9 +217,9 @@ use○○ というメソッド
 
 @snap[east span-1]
 
-- @size[0.5em](第一引数に、引数なしの関数を設定（ここでは doSomething()）)
-- @size[0.5em]( その関数がコンポーネントのレンダリング時に実行される（≒componentDidMount()や componentDidUpdate()）)
-- @size[0.5em](<戻り値を設定するとコンポーネントのアンマウント時に実行される（≒componentWillUnmount()>)
+- @size[0.5em](第一引数に、引数なしの関数を設定（ここでは doSomething）)
+- @size[0.5em]( その関数がコンポーネントのレンダリング時に実行される（componentDidMount や componentDidUpdate）)
+- @size[0.5em](戻り値を設定するとコンポーネントのアンマウント時に実行される（componentWillUnmount）)
 - @size[0.5em](第二引数は配列で指定する必要ある（省略可能）)
 - @size[0.5em](そこに任意の変数を入れておくと、その値が前回のレンダリング時と変わらなければ第一引数で渡された)
 - @size[0.5em](関数の実行がキャンセルされることになる)
