@@ -230,14 +230,12 @@ use○○ というメソッド
     @snapend
 
     ```js
-
     useEffect(() => {
 
     doSomething();
 
     return clearSomething();
     }, [watchVar]);
-
     ```
 
     @[1]
