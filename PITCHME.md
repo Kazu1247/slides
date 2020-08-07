@@ -229,13 +229,14 @@ use○○ というメソッド
     Live Code Presenting
     @snapend
 
-    ```js
-    useEffect(() => {
+    ```
+      useEffect(() => {
 
-    doSomething();
+        doSomething();
 
-    return clearSomething();
-    }, [watchVar]);
+        return clearSomething();
+      }, [watchVar]);
+
     ```
 
     @[1]
