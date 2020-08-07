@@ -199,9 +199,15 @@ use○○ というメソッド
 
 ---
 
-### クラスコンポーネントではライフサイクルメソッドでタイミングを制御していたが、その保証は行ってくれるのか？
+クラスコンポーネントではライフサイクルメソッドで
+
+## タイミング
+
+を制御していたが、その保証は行ってくれるのか？
 
 ---
+
+このページいらない？
 
 @snap[west span-45]
 
@@ -216,6 +222,29 @@ use○○ というメソッド
 @size[0.5em](クラスコンポーネントの場合は、このようなケースに対処するために componentDidUpdate を加える必要がありました。)
 
 @snapend
+
+---
+
+    @snap[north-east span-100 text-06 text-gray]
+    Live Code Presenting
+    @snapend
+
+    ```js
+    var io = require('socket.io')(80);
+    var cfg = require('./config.json');
+    var tw = require('node-tweet-stream')(cfg);
+
+    tw.track('socket.io');
+    tw.track('javascript');
+
+    tw.on('tweet', function(tweet){
+      io.emit('tweet', tweet);
+    });
+    ```
+
+    @[1]
+    @[2,3]
+    @[5-10]
 
 ---
 
