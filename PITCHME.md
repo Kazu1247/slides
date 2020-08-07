@@ -142,7 +142,7 @@ use○○ というメソッド
 
 ---
 
-### 伝統的なクラスコンポーネントだと、
+### （伝統的な）クラスコンポーネントだと、
 
 - @size[0.5em](state を使ったロジックはコンポーネント内のあらゆる場所に散在しがち)
 - @size[0.5em](小さなコンポーネントに分割することが不可能)
@@ -162,8 +162,8 @@ use○○ というメソッド
 @snap[east span-50]
 
 - @size[0.5em](document.title を設定するためのロジックが componentDidMount と componentDidUpdate に分離している。)
-- @size[0.5em](データ購読のためのロジックもやはり componentDidMount と componentWillUnmount とに分離している。)
-- @size[0.5em](そして componentDidMount には両方の仕事のためのコードが含まれている。)
+- @size[0.5em](データ購読のためのロジックも componentDidMount と componentWillUnmount とに分離している。)
+- @size[0.5em](componentDidMount には異なる種類の処理が書かれている。)
 
 @snapend
 
