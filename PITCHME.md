@@ -235,6 +235,46 @@ use○○ というメソッド
 
 ---
 
+@snap[west span-45]
+
+![alt](assets/images/useEffect3.png)
+
+@snapend
+
+@snap[east span-50]
+
+- @size[0.5em](第二引数は省略するとレンダリング時の毎回doSomethingは実行される)
+- @size[0.5em](そこに任意の変数を入れておくと、その値が前回のレンダリング時と変わらなければ第一引数で渡された関数の実行がキャンセルされることになる)
+
+@snapend
+
+---
+
+@snap[west span-45]
+
+![alt](assets/images/useEffect2.png)
+
+@snapend
+
+@snap[east span-50]
+
+- @size[0.5em](第二引数にから配列を渡す、初回のレンダリング時にのみdoSomethingが実行される)
+- @size[0.5em](そこに任意の変数を入れておくと、その値が前回のレンダリング時と変わらなければ第一引数で渡された関数の実行がキャンセルされることになる)
+
+@snapend
+
+---
+
+## クラスコンポーネント
+
+このライフサイクルのタイミングでこの処理とこの処理を実行する
+
+## Effect Hook
+
+この処理を実行したいのはこれとこれのライフサイクルのタイミングだ
+
+---
+
     @snap[north-east span-100 text-06 text-gray]
     Live Code Presenting
     @snapend
@@ -249,17 +289,6 @@ use○○ というメソッド
     });
 
     ```
-
----
-
-@snap[west span-45]
-![alt](assets/images/ComponentDidUpdate1.png)
-![alt](assets/images/ComponentDidUpdate2.png)
-@snapend@
-
-@snap[east span-50]
-@size[0.5em](ComponentDidUpdate なのに、毎回自分で、現在の state を props から渡される値の比較をして、それらが異な場合のみ処理を行うという保証を必ず行わなければいけない)
-@snapend
 
 ```
 
