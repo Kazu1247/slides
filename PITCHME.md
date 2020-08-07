@@ -98,15 +98,15 @@
 
 ![alt](assets/images/life.png)
 
-(https://qiita.com/kawachi/items/092bfc281f88e3a6e456)
-
 @snapend
 
 @snap[east span-50]
 
-- @size[0.5em](ComponentDidMount)
-- @size[0.5em](ComponentDidUpdate)
-- @size[0.5em](ComponentWillUnmount)
+- @size[1em](ComponentDidMount)
+- @size[1em](ComponentDidUpdate)
+- @size[1em](ComponentWillUnmount)
+  <br />
+- @size[0.5em](https://qiita.com/kawachi/items/092bfc281f88e3a6e456)
 
 @snapend
 
