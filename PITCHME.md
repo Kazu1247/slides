@@ -133,8 +133,15 @@
 
 use○○ というメソッド
 
-- userState
-- useEffect
+---
+
+## userState
+
+これで state を管理できる
+
+## useEffect
+
+これはライフサイクルメソッドのようなもの
 
 ---
 
