@@ -215,7 +215,7 @@ use○○ というメソッド
 
 ![alt](assets/images/useEffect.png)
 
-@snap[east span-70]
+@snap[east span-30]
 
 - @size[0.5em](第一引数に、引数なしの関数を設定（ここでは doSomething())
 - @size[0.5em]( その関数がコンポーネントのレンダリング時に実行される（≒componentDidMount()や componentDidUpdate())
