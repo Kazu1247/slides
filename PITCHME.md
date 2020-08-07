@@ -240,13 +240,11 @@ use○○ というメソッド
     @snapend
 
     ```js
-
-useEffect(() => {
-doSomething();
-return clearSomething();
-}, []);
-
-```
+    useEffect(() => {
+    doSomething();
+    return clearSomething();
+    }, []);
+    ```
 
 ---
 
@@ -258,4 +256,7 @@ return clearSomething();
 @snap[east span-50]
 @size[0.5em](ComponentDidUpdate なのに、毎回自分で、現在の state を props から渡される値の比較をして、それらが異な場合のみ処理を行うという保証を必ず行わなければいけない)
 @snapend
+
+```
+
 ```
