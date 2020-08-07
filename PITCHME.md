@@ -225,17 +225,19 @@ use○○ というメソッド
 
 ---
 
-    @snap[north-east span-100 text-06 text-gray]
-    useEffectを使ってみる
-    @snapend
+@snap[west span-45]
 
+![alt](assets/images/useEffect.png)
 
-      useEffect(() => {
+@snapend
 
-        doSomething();
+@snap[east span-50]
 
-        return clearSomething();
-      }, [hogehoge]);
+@size[0.5em](コンポーネントが表示されている最中に friend プロパティが変わったらどうなるのか？)<br />
+@size[0.5em](このコンポーネントは間違ったフレンドのオンラインステータスを表示し続けてしまいます（バグ）。)<br />
+@size[0.5em](クラスコンポーネントの場合は、このようなケースに対処するために componentDidUpdate を加える必要がありました。)
+
+@snapend
 
 ---
 
