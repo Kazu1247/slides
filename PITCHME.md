@@ -229,17 +229,16 @@ use○○ というメソッド
     useEffectを使ってみる
     @snapend
 
-    ```
+    ```js
       useEffect(() => {
 
         doSomething();
 
         return clearSomething();
       }, [watchVar]);
-
     ```
 
-    @[1-7]
+    @[2-7]
 
 ---
 
