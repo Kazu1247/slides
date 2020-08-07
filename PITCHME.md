@@ -94,7 +94,21 @@
 
 ---
 
-ここにライフサイクルメソッドの説明を簡単にいれる
+@snap[west span-45]
+
+![alt](assets/images/life.png)
+
+(https://qiita.com/kawachi/items/092bfc281f88e3a6e456)
+
+@snapend
+
+@snap[east span-50]
+
+- @size[0.5em](ComponentDidMount)
+- @size[0.5em](ComponentDidUpdate)
+- @size[0.5em](ComponentWillUnmount)
+
+@snapend
 
 ---
 
@@ -244,7 +258,6 @@ use○○ というメソッド
 @snap[east span-50]
 
 - @size[0.5em](第二引数は省略するとレンダリング時の毎回doSomethingは実行される)
-- @size[0.5em](そこに任意の変数を入れておくと、その値が前回のレンダリング時と変わらなければ第一引数で渡された関数の実行がキャンセルされることになる)
 
 @snapend
 
@@ -259,7 +272,6 @@ use○○ というメソッド
 @snap[east span-50]
 
 - @size[0.5em](第二引数にから配列を渡す、初回のレンダリング時にのみdoSomethingが実行される)
-- @size[0.5em](そこに任意の変数を入れておくと、その値が前回のレンダリング時と変わらなければ第一引数で渡された関数の実行がキャンセルされることになる)
 
 @snapend
 
@@ -274,22 +286,3 @@ use○○ というメソッド
 この処理を実行したいのはこれとこれのライフサイクルのタイミングだ
 
 ---
-
-    @snap[north-east span-100 text-06 text-gray]
-    Live Code Presenting
-    @snapend
-
-    ```
-
-    useEffect(() => {
-
-    doSomething();
-
-    return clearSomething();
-    });
-
-    ```
-
-```
-
-```
