@@ -215,7 +215,7 @@ use○○ というメソッド
 
 ![alt](assets/images/useEffect.png)
 
-@snap[east span-1]
+@snap[east span-10]
 
 - @size[0.5em](第一引数に、引数なしの関数を設定（doSomething）。レンダリング時に実行される)
 - @size[0.5em](戻り値を設定するとコンポーネントのアンマウント時に実行される)
