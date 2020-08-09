@@ -239,7 +239,7 @@ use○○ というメソッド
 
 @snap[east span-50]
 
-- @size[0.5em](<第二引数は省略するとレンダリング時の毎回doSomething()は実行される>)
+- @size[0.5em](第二引数は省略するとレンダリング時の毎回doSomethingは実行される)
 
 @snapend
 
@@ -253,7 +253,7 @@ use○○ というメソッド
 
 @snap[east span-50]
 
-- @size[0.5em](<第二引数に空配列を渡すと、初回のレンダリング時にのみdoSomething()が実行される>)
+- @size[0.5em](第二引数に空配列を渡すと、初回のレンダリング時にのみdoSomethingが実行される)
 
 @snapend
 
