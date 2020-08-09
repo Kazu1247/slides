@@ -184,15 +184,7 @@ use○○ というメソッド
 
 ---
 
-では
-
-@color[#5289F7](Hooks)
-
-を使用した
-
-@color[#5289F7](関数コンポーネント)
-
-ではどうなるのか
+では@color[#5289F7](Hooks)を使用した@color[#5289F7](関数コンポーネント)ではどうなるのか
 
 ---
 
@@ -264,5 +256,20 @@ use○○ というメソッド
 ---
 
 ご清聴、ありがとうございました！
+
+---
+
+@snap[west span-45]
+
+![alt](assets/images/ouka.png)
+
+@snapend
+
+@snap[east span-50]
+
+@size[0.5em](りあクト！ TypeScript で始めるつらくない React 開発 第 2 版 （大岡由佳）)
+@size[0.5em](@oukayuka)
+
+@snapend
 
 ---
