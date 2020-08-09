@@ -143,7 +143,7 @@ use○○ というメソッド
 
 ---
 
-## userState
+## useState
 
 これで state を管理できる
 
