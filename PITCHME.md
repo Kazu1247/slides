@@ -245,12 +245,6 @@ use○○ というメソッド
 
 ---?code=useEffect_3.js
 
-@snap[west span-45]
-
-![alt](assets/images/useEffect2.png)
-
-@snapend
-
 @snap[east span-50]
 
 - @size[0.5em](第二引数に空配列を渡すと、初回のレンダリング時にのみdoSomethingが実行される)
