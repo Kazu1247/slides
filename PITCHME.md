@@ -226,12 +226,6 @@ use○○ というメソッド
 
 ---?code=sample.js
 
-<!-- @snap[west span-45]
-
-![alt](assets/images/useEffect.png)
-
-@snapend -->
-
 @snap[east span-50]
 
 - @size[0.5em](第一引数に、引数なしの関数を設定（doSomething）。レンダリング時に実行される)
