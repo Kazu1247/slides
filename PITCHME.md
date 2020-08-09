@@ -10,7 +10,7 @@
 
 ## コンポーネントと Hooks について考える
 
----?code=sample.js
+---
 
 なんで？
 
@@ -224,13 +224,13 @@ use○○ というメソッド
 
 ## 😊 大丈夫だった
 
----
+---?code=sample.js
 
-@snap[west span-45]
+<!-- @snap[west span-45]
 
 ![alt](assets/images/useEffect.png)
 
-@snapend
+@snapend -->
 
 @snap[east span-50]
 
