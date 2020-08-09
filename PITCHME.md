@@ -22,12 +22,6 @@
 
 ---
 
-## 特に container component の見通しがよくない
-
-ちなみに container/Exercise.tsx は 2200 行以上ある
-
----
-
 ## そもそもコンポーネントって？
 
 - 概念的には JavaScript の関数と似ている。props という任意の入力を受け取り、画面上に表示すべき要素を返す。
@@ -106,7 +100,7 @@
 - @size[1em](ComponentDidUpdate)
 - @size[1em](ComponentWillUnmount)
   <br />
-- @size[0.5em](https://qiita.com/kawachi/items/092bfc281f88e3a6e456)
+  @size[0.5em](https://qiita.com/kawachi/items/092bfc281f88e3a6e456)
 
 @snapend
 
