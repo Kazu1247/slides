@@ -267,7 +267,8 @@ use○○ というメソッド
 
 @snap[east span-50]
 
-@size[0.5em](りあクト！ TypeScript で始めるつらくない React 開発 第 2 版 （大岡由佳）)
+@size[0.5em](りあクト！ TypeScript で始めるつらくない React 開発)
+@size[0.5em](大岡由佳)
 @size[0.5em](@oukayuka)
 
 @snapend
