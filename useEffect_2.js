@@ -1,0 +1,5 @@
+useEffect = () => {
+  doSomething();
+
+  return clearSomething;
+};
