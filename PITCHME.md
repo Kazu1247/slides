@@ -261,6 +261,8 @@ use○○ というメソッド
 
 @snap[west span-45]
 
+## I recommend
+
 ![alt](assets/images/ouka.png)
 
 @snapend
