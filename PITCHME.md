@@ -34,6 +34,12 @@ API 通信など副作用を伴う非同期処理を行ってくれるところ
 
 ---?sideEffect_without_middleWare.js
 
+@snap[east span-50]
+
+- @size[0.5em](第二引数は省略するとレンダリング時の毎回doSomethingは実行される)
+
+@snapend
+
 ---
 
 ## Presentational Component (見た目)
