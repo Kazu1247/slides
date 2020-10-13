@@ -32,7 +32,7 @@ API 通信など副作用を伴う非同期処理を行ってくれるところ
 
 - その結果をローカル state に格納してコンポーネント内部で使い回す
 
----?typescript=sideEffect_without_middleWare.tsx
+---?code=sideEffect_without_middleWare.tsx
 
 @snap[east span-50]
 
