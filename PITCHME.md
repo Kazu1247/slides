@@ -13,6 +13,24 @@
 
 ---
 
+@snap[west span-45]
+
+@size[0.5em] I recommend
+
+![alt](assets/images/ouka.png)
+
+@snapend
+
+@snap[east span-50]
+
+@size[0.5em](りあクト！TypeScriptで始めるつらくないReact開発)
+@size[0.5em](大岡由佳)
+@size[0.5em](@oukayuka)
+
+@snapend
+
+---
+
 ## そもそもミドルウェアって？
 
 API 通信など副作用を伴う非同期処理を行ってくれるところ
@@ -71,20 +89,11 @@ API 通信など副作用を伴う非同期処理を行ってくれるところ
 
 ---
 
-## まず、Redux のしくみ
+## Redux-Thunk のしくみ
 
 ![alt](assets/images/redux_thunk.png)
 
 ---
-
-## React 公式も、
-
-<be />
-- 関数コンポーネントを推奨
-- ただし、段階的にで良い
-- クラスコンポーネントも一生サポートしていく
-
-(https://ja.reactjs.org/docs/hooks-intro.html)
 
 ---
 
