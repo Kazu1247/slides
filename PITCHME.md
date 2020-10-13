@@ -32,7 +32,7 @@ API 通信など副作用を伴う非同期処理を行ってくれるところ
 
 - その結果をローカル state に格納してコンポーネント内部で使い回す
 
----?sideEffect_without_middleWare.js
+---?code=sideEffect_without_middleWare.js
 
 @snap[east span-50]
 
