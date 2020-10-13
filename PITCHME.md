@@ -57,45 +57,23 @@ API 通信など副作用を伴う非同期処理を行ってくれるところ
 
 ---
 
-![alt](assets/images/npm-trends-thunk.png)
+![alt](assets/images/npm_trends_thunk.png)
 
 ---
 
-@snap[west span-45]
-
-![alt](assets/images/life.png)
-
-@snapend
-
-@snap[east span-50]
-
-- @size[1em](ComponentDidMount)
-- @size[1em](ComponentDidUpdate)
-- @size[1em](ComponentWillUnmount)
-  <br />
-  @size[0.5em](https://qiita.com/kawachi/items/092bfc281f88e3a6e456)
-
-@snapend
+## Redux-Thunk のしくみ
 
 ---
 
-しかし、これからは<br />
+## まず、Redux のしくみ
 
-## 関数コンポーネント
-
-が推奨されるようになってきてる
+![alt](assets/images/redux.png)
 
 ---
 
-なぜなら、関数コンポーネントでも状態（state）制御することができる
+## まず、Redux のしくみ
 
-## Hooks
-
-が導入されたから（＝高機能になった）
-
-<br />
-<li>React Conf 2018 基調講演での Hooks の発表と α 版リリース</li>
-<li>2019 年 3 月にリリースされた React 16.8 で正式に盛り込まれた</li>
+![alt](assets/images/redux_thunk.png)
 
 ---
 
