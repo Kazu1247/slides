@@ -95,15 +95,7 @@ API 通信など副作用を伴う非同期処理を行ってくれるところ
 
 ---?code=thunk_example.ts
 
----
-
-## useState
-
-これで state を管理できる
-
-## useEffect
-
-これはライフサイクルメソッドのようなもの
+---?code=reducer.ts
 
 ---
 
