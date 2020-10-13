@@ -95,7 +95,19 @@ API 通信など副作用を伴う非同期処理を行ってくれるところ
 
 ---?code=thunk_example.ts
 
+@snap[east span-50]
+
+@size[0.5em](thunk/hoge)
+
+@snapend
+
 ---?code=reducer.ts
+
+@snap[east span-50]
+
+- @size[0.5em](reducer/hoge)
+
+@snapend
 
 ---
 
