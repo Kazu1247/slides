@@ -93,13 +93,7 @@ API 通信など副作用を伴う非同期処理を行ってくれるところ
 
 ![alt](assets/images/redux_thunk.png)
 
----
-
----
-
-## Hooks とは
-
-use○○ というメソッド
+---?code=thunk_example.ts
 
 ---
 
