@@ -1,3 +1,5 @@
+@thunk/hoge
+
 const fetchMembersProperty = ({ hoge }: Props) => {
   return async (dispatch: Dispatch) => {
     dispatch(fetchMembers());
