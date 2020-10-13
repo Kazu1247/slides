@@ -11,6 +11,8 @@ const fetchMembersProperty = ({ hoge }: Props) => {
 
 export default fetchMembersProperty;
 
+-----
+
 @reducer/
 switch (action.type) {
     case FETCH_MEMBERS: {
@@ -19,5 +21,7 @@ switch (action.type) {
         isFetching: true
       };
     }
+
+-----
 
 
