@@ -1,3 +1,4 @@
+@thunk/
 const fetchMembersProperty = ({ hoge }: Props) => {
   return async (dispatch: Dispatch) => {
     dispatch(fetchMembers());
@@ -9,3 +10,14 @@ const fetchMembersProperty = ({ hoge }: Props) => {
 };
 
 export default fetchMembersProperty;
+
+@reducer/
+switch (action.type) {
+    case FETCH_MEMBERS: {
+      return {
+        ...state,
+        isFetching: true
+      };
+    }
+
+
