@@ -2,154 +2,100 @@
 
 <br />
 
-## -関数コンポーネントと Hooks の導入-
+## - Redux-Thunk の導入 -
 
-2020/8/7 小林
-
----
-
-## コンポーネントと Hooks について考える
+2020/10/20 小林
 
 ---
 
-なんで？
-
----
-
-(いつか)
-
-## リファクタリングしたいから
-
----
-
-## そもそもコンポーネントって？
-
-- 概念的には JavaScript の関数と似ている。props という任意の入力を受け取り、画面上に表示すべき要素を返す。
-  <br />
-- 独立していて再利用できる部品
-
----
-
-コンポーネントを
-<br />
-「定義の仕方」によって分けると、
-
----
-
-## クラスコンポーネント
-
-<br />VS
-
-## 関数コンポーネント
-
----
-
-役割の観点で分類すると、
-
----
-
-## Presentational Component (見た目)
-
-<br />VS
-
-## Container Component (ロジック)
-
----
-
-🏋🏻‍♀️1st Round
-
-<br />
-
-## クラスコンポーネント
-
-<br />VS
-
-## 関数コンポーネント
-
----
-
-今までは
-
-## クラスコンポーネント
-
-が多くのシーンで利用されてきた
-
----
-
-なぜなら、クラスコンポーネントでは、
-
-## 状態（state）
-
-を持つことができるし、React に関する
-
-## ライフサイクルメソッド
-
-実装することができるから（＝高機能）
+- なぜ、ミドルウェアを導入すべきなのかを確認する
+- Redux-Thunk の特徴について確認をする
 
 ---
 
 @snap[west span-45]
 
-![alt](assets/images/life.png)
+@size[0.5em] I recommend
+
+![alt](assets/images/ouka.png)
 
 @snapend
 
 @snap[east span-50]
 
-- @size[1em](ComponentDidMount)
-- @size[1em](ComponentDidUpdate)
-- @size[1em](ComponentWillUnmount)
-  <br />
-  @size[0.5em](https://qiita.com/kawachi/items/092bfc281f88e3a6e456)
+@size[0.5em](りあクト！TypeScriptで始めるつらくないReact開発)
+@size[0.5em](大岡由佳)
+@size[0.5em](@oukayuka)
 
 @snapend
 
 ---
 
-しかし、これからは<br />
+## そもそもミドルウェアって？
 
-## 関数コンポーネント
-
-が推奨されるようになってきてる
+API 通信など副作用を伴う非同期処理を行ってくれるところ
 
 ---
 
-なぜなら、関数コンポーネントでも状態（state）制御することができる
-
-## Hooks
-
-が導入されたから（＝高機能になった）
-
-<br />
-<li>React Conf 2018 基調講演での Hooks の発表と α 版リリース</li>
-<li>2019 年 3 月にリリースされた React 16.8 で正式に盛り込まれた</li>
+## なぜミドルウェアが必要なのか？
 
 ---
 
-## React 公式も、
+## ミドルウェアを使わない場合、
 
-<be />
-- 関数コンポーネントを推奨
-- ただし、段階的にで良い
-- クラスコンポーネントも一生サポートしていく
+- React コンポーネント内部に処理を置く
 
-(https://ja.reactjs.org/docs/hooks-intro.html)
+  - ライフサイクルメソッド
+  - イベントハンドラで呼ばれる関数
 
----
+- その結果をローカル state に格納してコンポーネント内部で使い回す
 
-## Hooks とは
-
-use○○ というメソッド
+---?code=sideEffect_without_middleWare.tsx
 
 ---
 
-## useState
+このやり方だと、規模が大きくなるにつれれ様々な問題が出てくる
 
-これで state を管理できる
+---
 
-## useEffect
+## 問題点
 
-これはライフサイクルメソッドのようなもの
+- コンポーネントと副作用を伴うロジックが密結合になる
+
+  - メンテナンスコスト
+  - テストしにくい
+  - 再利用できないか取得したデータは使い捨てになる
+
+- ライフサイクルメソッドを使う場合は、重複したコードを書くことになる
+  - componentDidMount と componentDidUpdate
+
+---
+
+## そこで、ミドルウェアを使おうということになった
+
+---
+
+![alt](assets/images/npm_trends_thunk.png)
+
+---
+
+## Redux-Thunk のしくみ
+
+---
+
+## まず、Redux のしくみ
+
+![alt](assets/images/redux.png)
+
+---
+
+## Redux-Thunk のしくみ
+
+![alt](assets/images/redux_thunk.png)
+
+---?code=thunk_example.ts
+
+---?code=reducer.ts
 
 ---
 

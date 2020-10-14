@@ -18,6 +18,8 @@ description: ""
 # thumbnail :
 
 # theme : night
-highlight: monokai-sublime
+
+#コードのシンタックスハイライトの設定
+highlight: monokai
 slide-number: true
 # transition : fade
