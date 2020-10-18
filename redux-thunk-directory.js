@@ -3,4 +3,5 @@ src/
 　├ actions/
 　├ reducers/
 　├ componets/
-　├ containers/ ここで非同期処理を書いていた
+　├ containers/ 
+　├ thunks/ ここに非同期処理を書くようになる
