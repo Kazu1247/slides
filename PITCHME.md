@@ -122,7 +122,7 @@ dispatcher を拡張して、<br />
 
 @size[0.5em]@color[#5289F7](標準の Dispatcher)
 
-@color[#5289F7](純粋な action オブジェクト)s のみ dispatch する
+@size[0.25em]@color[#5289F7](純粋な action オブジェクト) のみ dispatch する
 
 ![alt](assets/images/mapDispatchToProps.png)
 
@@ -130,9 +130,9 @@ dispatcher を拡張して、<br />
 
 @snap[east span-50]
 
-@size[0.5em](Redux Thunk)
+@size[0.5em]@color[#5289F7](Redux Thunk)
 
-@color[#5289F7](副作用を内包した関数や Promise オブジェクト)も dispatch する
+@size[0.25em]@color[#5289F7](副作用を内包した関数や Promise オブジェクト)も dispatch する
 
 ![alt](assets/images/redux-thunk-example.png)
 
