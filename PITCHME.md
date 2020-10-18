@@ -163,7 +163,7 @@
 
 ## 😊 大丈夫だった
 
----?code=useEffect_1.js
+---?code=redux-thunk-directory.js
 
 @snap[east span-50]
 
