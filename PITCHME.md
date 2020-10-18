@@ -122,7 +122,7 @@ dispatcher を拡張して、<br />
 
 @size[0.5em]@color[#5289F7](標準の Dispatcher)
 
-@size[0.25em]@color[#5289F7](純粋な action オブジェクト) のみ dispatch する
+@size[0.25em](@color[#5289F7](純粋な action オブジェクト) のみ dispatch する)
 
 ![alt](assets/images/mapDispatchToProps.png)
 
