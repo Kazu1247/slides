@@ -167,14 +167,6 @@
 
 @snap[east span-50]
 
-?code=redux-thunk-directory.js
-code=redux-thunk-directory.js
-
-- @size[0.5em](第一引数に、引数なしの関数を設定（doSomething）。レンダリング時に実行される)
-- @size[0.5em](戻り値を設定するとコンポーネントのアンマウント時に実行される)
-- @size[0.5em](第二引数は配列で指定（省略可能）)
-- @size[0.5em](そこに任意の変数を入れておくと、その値が前回のレンダリング時と変わらなければ第一引数で渡された関数の実行がキャンセルされることになる)
-
 @snapend
 
 ---?code=useEffect_2.js
