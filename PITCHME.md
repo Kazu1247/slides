@@ -110,7 +110,7 @@
 
 @snap[west span-45 font-size]
 
-@size[0.75em]<b>@color[#5289F7](標準の Dispatcher)</b><br />@container
+@size[0.75em]<b>@color[#5289F7](標準の Dispatcher)</b><br />@size[0.5em](@container)
 
 @size[0.5em](@color[#5289F7](純粋な action オブジェクト) のみ dispatch する)
 
@@ -120,7 +120,7 @@
 
 @snap[east span-50]
 
-@size[0.75em]@color[#5289F7](Redux Thunk)<br />@thunk
+@size[0.75em]<b>@color[#5289F7](Redux Thunk)</b><br />@size[0.5em](@thunk)
 
 @size[0.5em](@color[#5289F7](副作用を内包した関数や Promise オブジェクト)も dispatch する)
 
