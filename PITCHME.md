@@ -99,7 +99,7 @@ API 通信など副作用を伴う非同期処理を行ってくれるところ
 
 ---
 
-### Redux-Thunk とは、
+## Redux-Thunk とは、
 
 dispatcher を拡張して、<br />
 純粋な action オブジェクト以外にも副作用を
@@ -120,8 +120,9 @@ dispatcher を拡張して、<br />
 
 @snap[west span-45]
 
-- 標準の Dispatcher
-  - 純粋な action オブジェクトのみ dispatch する s
+## 標準の Dispatcher
+
+- 純粋な action オブジェクトのみ dispatch する s
 
 ![alt](assets/images/mapDispatchToProps.png)
 
@@ -129,8 +130,9 @@ dispatcher を拡張して、<br />
 
 @snap[east span-50]
 
-- Redux Thunk
-  - 副作用を内包した関数や Promise オブジェクトを dispatch する
+## Redux Thunk
+
+- 副作用を内包した関数や Promise オブジェクトを dispatch する
 
 ![alt](assets/images/redux-thunk-example.png)
 
