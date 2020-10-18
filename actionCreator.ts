@@ -1,3 +1,5 @@
+@action/hoge
+
 export const fetchMembers = () => ({
   type: FETCH_MEMBERS
 });
