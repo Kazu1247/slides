@@ -83,13 +83,13 @@ API 通信など副作用を伴う非同期処理を行ってくれるところ
 
 ---
 
-## まず、Redux のしくみ
+## まず、Redux のデータフロー
 
 ![alt](assets/images/redux.png)
 
 ---
 
-## Redux-Thunk のしくみ
+## Redux-Thunk のデータフロー
 
 ![alt](assets/images/redux_thunk.png)
 
@@ -99,17 +99,20 @@ API 通信など副作用を伴う非同期処理を行ってくれるところ
 
 ---
 
-- action creator の中で他の action creator を dispatch することができる
-- 複数の action を dispatch することができる
+- Redux-Thunk とは、
+
+dispatcher を拡張して、<br />
+純粋な action オブジェクト以外にも副作用を
+内包した関数や Promise オブジェクトを dispatch できるようにするミドルウェア
 
 ---
 
-### （伝統的な）クラスコンポーネントだと、
+- 「dispatcher を拡張して」とは、
 
-- @size[0.5em](state を使ったロジックはコンポーネント内のあらゆる場所に散在しがち)
-- @size[0.5em](小さなコンポーネントに分割することが不可能)
-- @size[0.5em](可読性が低くなりがち)
-- @size[0.5em](この問題を解決するため、ライフサイクルメソッドによって無理矢理分割している)
+---
+
+- action creator の中で他の action creator を dispatch することができる
+- 複数の action を dispatch することができる
 
 ---
 
@@ -117,17 +120,17 @@ API 通信など副作用を伴う非同期処理を行ってくれるところ
 
 @snap[west span-45]
 
-![alt](assets/images/ClassCompoenntExample.png)
+![alt](assets/images/mapDispatchToProps.png)
 
 @snapend
 
 @snap[east span-50]
 
-- @size[0.5em](document.title を設定するためのロジックが componentDidMount と componentDidUpdate に分離している。)
-- @size[0.5em](データ購読のためのロジックも componentDidMount と componentWillUnmount とに分離している。)
-- @size[0.5em](componentDidMount には異なる種類の処理が書かれている。)
+![alt](assets/images/redux-thunk-example.png)
 
 @snapend
+
+---
 
 ---
 
