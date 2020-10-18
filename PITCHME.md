@@ -104,8 +104,8 @@
 
 ## Redux-Thunk とは、
 
-dispatcher を拡張して、<br />
-純粋な action オブジェクト以外にも副作用を
+①dispatcher を拡張して、<br />
+② 純粋な action オブジェクト以外にも副作用を
 内包した関数や Promise オブジェクトを dispatch できるようにするミドルウェア
 
 ---
@@ -123,7 +123,7 @@ dispatcher を拡張して、<br />
 
 @snap[west span-45 font-size]
 
-@size[0.75em]@color[#5289F7](標準の Dispatcher)
+@size[0.75em]@color[#5289F7](標準の Dispatcher)<br />@container
 
 @size[0.5em](@color[#5289F7](純粋な action オブジェクト) のみ dispatch する)
 
@@ -133,7 +133,7 @@ dispatcher を拡張して、<br />
 
 @snap[east span-50]
 
-@size[0.75em]@color[#5289F7](Redux Thunk)
+@size[0.75em]@color[#5289F7](Redux Thunk)<br />@thunk
 
 @size[0.5em](@color[#5289F7](副作用を内包した関数や Promise オブジェクト)も dispatch する)
 
