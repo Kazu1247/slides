@@ -2,6 +2,7 @@
 
 const membersReducer = (state = hogeState, action: MembersAction) => {
   switch (action.type) {
+    // アクションfetchMembers が発行されたら行う処理
     case FETCH_MEMBERS: {
       return {
         ...state,
@@ -9,6 +10,7 @@ const membersReducer = (state = hogeState, action: MembersAction) => {
       };
     }
 
+    // アクションsetMembers が発行されたら行う処理 
     case SET_MEMBERS: {
       return {
         ...state,
