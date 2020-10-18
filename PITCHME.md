@@ -134,6 +134,20 @@
 
 ---
 
+@snap[west span-45]
+
+![alt](assets/images/directory1.png)
+
+@snapend
+
+@snap[east span-50]
+
+![alt](assets/images/directory2.png)
+
+@snapend
+
+---
+
 - 「dispatcher を拡張して」とは、
 
 ---
