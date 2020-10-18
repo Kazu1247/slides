@@ -132,7 +132,7 @@ dispatcher を拡張して、<br />
 
 @size[0.5em]@color[#5289F7](Redux Thunk)
 
-@size[12px]@color[#5289F7](副作用を内包した関数や Promise オブジェクト)も dispatch する
+@size[12px](@color[#5289F7](副作用を内包した関数や Promise オブジェクト))も dispatch する
 
 ![alt](assets/images/redux-thunk-example.png)
 
