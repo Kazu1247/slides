@@ -134,9 +134,9 @@
 
 ---?code=actionCreator.ts
 
-@snap[west span-45]
+---
 
-## ディレクトリ構成
+@snap[west span-45]
 
 ![alt](assets/images/directory1.png)
 
