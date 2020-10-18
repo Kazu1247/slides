@@ -110,7 +110,7 @@
 
 @snap[west span-45 font-size]
 
-@size[0.75em]@color[#5289F7](標準の Dispatcher)<br />@container
+@size[0.75em]@color[#5289F7](@weight[bold](標準の Dispatcher))<br />@container
 
 @size[0.5em](@color[#5289F7](純粋な action オブジェクト) のみ dispatch する)
 
