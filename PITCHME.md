@@ -35,7 +35,7 @@
 
 ---
 
-非同期処理をどう扱うかが変わってくる
+非同期処理を伴う外部通信、API をどう扱うかが変わってくる
 
 ---
 
@@ -132,7 +132,7 @@
 
 ---?code=reducer.ts
 
----
+---?code=actionCreator.ts
 
 @snap[west span-45]
 
