@@ -82,6 +82,10 @@
 
 ---
 
+## React ミドルウェアの御三家
+
+### Redux-Thunk vs Redux-Saga vs Redux-Observable
+
 ![alt](assets/images/npm_trends_thunk.png)
 
 ---
@@ -159,9 +163,9 @@ dispatch: "発送する","派遣する"
 ## まとめ
 
 - Redux Thunk
-  - 純粋な action だけでなく、非同期処理を含む action creator も dispatch できるようになる
-  - 複数の action を dispatch することができる
-    - API のやりとりを Thunks に固めていこう
+  - 特徴 ① 純粋な action だけでなく、非同期処理を含む action creator も dispatch できるようになる
+  - 特徴 ② 複数の action を dispatch することができる
+    - 使われ方：API のやりとりを Thunks に固める
 
 ---
 
