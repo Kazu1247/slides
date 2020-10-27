@@ -164,7 +164,7 @@ dispatch: "発送する","派遣する"
 
 - Redux Thunk
   - 特徴 ① 純粋な action だけでなく、非同期処理を含む action creator も dispatch できるようになる
-  - 特徴 ② 複数の action を dispatch することができる
+  - 特徴 ② 複数の action を dispatch することができる<br />
     → 使われ方：API のやりとりを Thunks に固める
 
 ---
