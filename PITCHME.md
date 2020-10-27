@@ -150,66 +150,12 @@
 
 ---
 
-- 「dispatcher を拡張して」とは、
+## まとめ
 
----
-
-- action creator の中で他の action creator を dispatch することができる
-- 複数の action を dispatch することができる
-
----
-
-では@color[#5289F7](Hooks)を使用した@color[#5289F7](関数コンポーネント)ではどうなるのか
-
----
-
-@snap[west span-45]
-
-![alt](assets/images/FunctionalComponentExample.png)
-
-@snapend
-
-@snap[east span-50]
-
-- @size[0.5em](Hooksを使うことで、ライフサイクルのメソッド名に基づくのではなく、実際に何をやっているのかに基づいてコードを分割ができるようになる。)
-
-@snapend
-
----
-
-## 😊 大丈夫だった
-
----?code=redux-thunk-directory.js
-
-@snap[east span-50]
-
-@snapend
-
----?code=useEffect_2.js
-
-@snap[east span-50]
-
-- @size[0.5em](第二引数は省略するとレンダリング時の毎回doSomethingは実行される)
-
-@snapend
-
----?code=useEffect_3.js
-
-@snap[east span-50]
-
-- @size[0.5em](第二引数に空配列を渡すと、初回のレンダリング時にのみdoSomethingが実行される)
-
-@snapend
-
----
-
-## クラスコンポーネント
-
-→ このライフサイクルのタイミングでこの処理とこの処理を実行する
-
-## Effect Hook
-
-→ この処理を実行したいのはこれとこれのタイミングだ
+- Redux Thunk
+  - 純粋な action だけでなく、非同期処理を含む action creator も dispatch できるようになる
+  - 複数の action を dispatch することができる
+    - API のやりとりを Thunks に固めていこう
 
 ---
 
