@@ -98,7 +98,8 @@
 
 ![alt](assets/images/redux.png)
 
-dispatch: "発送する","派遣する"
+dispatch: "発送する","派遣する"<br />
+reduce: "還元する"
 
 ---
 
