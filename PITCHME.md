@@ -4,40 +4,24 @@
 
 ## - Redux-Thunk の導入 -
 
-2020/10/20 小林
+2020/10/28 小林
 
 ---
 
-- なぜ、ミドルウェアを導入すべきなのかを確認する
-- Redux-Thunk の特徴について確認をする
+- なぜ、ミドルウェアを導入すべきなのか
+- Redux-Thunk の特徴について
 
 ---
 
-@snap[west span-45]
-
-@size[0.5em] I recommend
-
-![alt](assets/images/ouka.png)
-
-@snapend
-
-@snap[east span-50]
-
-@size[0.5em](りあクト！TypeScriptで始めるつらくないReact開発)
-@size[0.5em](大岡由佳)
-@size[0.5em](@oukayuka)
-
-@snapend
+なぜ、ミドルウェアを導入すべきなのか
 
 ---
 
-## そもそもミドルウェアって？
-
-API 通信など副作用を伴う非同期処理を行ってくれるところ
+## ミドルウェアがない場合とある場合では何が違うのか？
 
 ---
 
-## なぜミドルウェアが必要なのか？
+非同期処理を伴う外部通信、API をどう扱うかが変わってくる
 
 ---
 
@@ -71,9 +55,18 @@ API 通信など副作用を伴う非同期処理を行ってくれるところ
 
 ---
 
-## そこで、ミドルウェアを使おうということになった
+## そこで、ミドルウェアを使おうという選択肢
 
 ---
+
+- 非同期処理を含む処理を切り出して、独立させる
+- 同じロジックの使い回しが 可能になる
+
+---
+
+## React ミドルウェアの御三家
+
+### Redux-Thunk vs Redux-Saga vs Redux-Observable
 
 ![alt](assets/images/npm_trends_thunk.png)
 
@@ -83,125 +76,79 @@ API 通信など副作用を伴う非同期処理を行ってくれるところ
 
 ---
 
-## まず、Redux のしくみ
+## まず、Redux のデータフロー
 
 ![alt](assets/images/redux.png)
 
+dispatch: "発送する","派遣する"<br />
+reduce: "還元する"
+
 ---
 
-## Redux-Thunk のしくみ
+## Redux-Thunk のデータフロー
 
 ![alt](assets/images/redux_thunk.png)
 
----?code=thunk_example.ts
-
----?code=reducer.ts
-
 ---
 
-@color[#5289F7](Hooks)は何を解決してくれるの？
+## Redux-Thunk とは、
 
----
-
-### （伝統的な）クラスコンポーネントだと、
-
-- @size[0.5em](state を使ったロジックはコンポーネント内のあらゆる場所に散在しがち)
-- @size[0.5em](小さなコンポーネントに分割することが不可能)
-- @size[0.5em](可読性が低くなりがち)
-- @size[0.5em](この問題を解決するため、ライフサイクルメソッドによって無理矢理分割している)
+①dispatcher を拡張して、<br />
+② 純粋な action オブジェクト以外にも副作用を
+含む関数や Promise オブジェクトを dispatch できるようにするミドルウェア
 
 ---
 
 <br>
 
+@snap[west span-45 font-size]
+
+@size[0.75em]<b>@color[#5289F7](標準の Dispatcher)</b><br />@size[0.5em](@container)
+
+@size[0.5em](@color[#5289F7](純粋な action オブジェクト) のみ dispatch する)
+
+![alt](assets/images/mapDispatchToProps.png)
+
+@snapend
+
+@snap[east span-50]
+
+@size[0.75em]<b>@color[#5289F7](Redux Thunk)</b><br />@size[0.5em](@thunk)
+
+@size[0.5em](@color[#5289F7](副作用を内包した関数や Promise オブジェクト)も dispatch する)
+
+![alt](assets/images/redux-thunk-example.png)
+
+@snapend
+
+---?code=thunk_example.ts
+
+---?code=reducer.ts
+
+---?code=actionCreator.ts
+
+---
+
 @snap[west span-45]
 
-![alt](assets/images/ClassCompoenntExample.png)
+![alt](assets/images/directory1.png)
 
 @snapend
 
 @snap[east span-50]
 
-- @size[0.5em](document.title を設定するためのロジックが componentDidMount と componentDidUpdate に分離している。)
-- @size[0.5em](データ購読のためのロジックも componentDidMount と componentWillUnmount とに分離している。)
-- @size[0.5em](componentDidMount には異なる種類の処理が書かれている。)
+![alt](assets/images/directory2.png)
 
 @snapend
 
 ---
 
-では@color[#5289F7](Hooks)を使用した@color[#5289F7](関数コンポーネント)ではどうなるのか
+## まとめ
 
----
-
-@snap[west span-45]
-
-![alt](assets/images/FunctionalComponentExample.png)
-
-@snapend
-
-@snap[east span-50]
-
-- @size[0.5em](Hooksを使うことで、ライフサイクルのメソッド名に基づくのではなく、実際に何をやっているのかに基づいてコードを分割ができるようになる。)
-
-@snapend
-
----
-
-🤔
-
----
-
-クラスコンポーネントではライフサイクルメソッドで
-
-## タイミング
-
-を制御していたが、その保証は行ってくれるのか？
-
----
-
-## 😊 大丈夫だった
-
----?code=useEffect_1.js
-
-@snap[east span-50]
-
-- @size[0.5em](第一引数に、引数なしの関数を設定（doSomething）。レンダリング時に実行される)
-- @size[0.5em](戻り値を設定するとコンポーネントのアンマウント時に実行される)
-- @size[0.5em](第二引数は配列で指定（省略可能）)
-- @size[0.5em](そこに任意の変数を入れておくと、その値が前回のレンダリング時と変わらなければ第一引数で渡された関数の実行がキャンセルされることになる)
-
-@snapend
-
----?code=useEffect_2.js
-
-@snap[east span-50]
-
-- @size[0.5em](第二引数は省略するとレンダリング時の毎回doSomethingは実行される)
-
-@snapend
-
----?code=useEffect_3.js
-
-@snap[east span-50]
-
-- @size[0.5em](第二引数に空配列を渡すと、初回のレンダリング時にのみdoSomethingが実行される)
-
-@snapend
-
----
-
-## クラスコンポーネント
-
-→ このライフサイクルのタイミングでこの処理とこの処理を実行する
-
-## Effect Hook
-
-→ この処理を実行したいのはこれとこれのタイミングだ
-
----
-
-ご清聴、ありがとうございました！
+- Redux Thunk
+  - 特徴 ① 純粋な action だけでなく、非同期処理を含む action creator も dispatch できるようになる
+  - 特徴 ② 複数の action を dispatch することができる<br />
+    → 使われ方：API のやりとりを Thunks に固める。action を発行するだけで API を叩けるようにする。
 
 ---
 
@@ -219,6 +166,10 @@ API 通信など副作用を伴う非同期処理を行ってくれるところ
 @size[0.5em](大岡由佳)
 @size[0.5em](@oukayuka)
 
-@snapend
+## @snapend
+
+---
+
+ご清聴、ありがとうございました！
 
 ---
