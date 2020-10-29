@@ -13,24 +13,6 @@
 
 ---
 
-@snap[west span-45]
-
-@size[0.5em] I recommend
-
-![alt](assets/images/ouka.png)
-
-@snapend
-
-@snap[east span-50]
-
-@size[0.5em](りあクト！TypeScriptで始めるつらくないReact開発)
-@size[0.5em](大岡由佳)
-@size[0.5em](@oukayuka)
-
-@snapend
-
----
-
 なぜ、ミドルウェアを導入すべきなのか
 
 ---
@@ -167,6 +149,24 @@ reduce: "還元する"
   - 特徴 ① 純粋な action だけでなく、非同期処理を含む action creator も dispatch できるようになる
   - 特徴 ② 複数の action を dispatch することができる<br />
     → 使われ方：API のやりとりを Thunks に固める。action を発行するだけで API を叩けるようにする。
+
+---
+
+@snap[west span-45]
+
+@size[0.5em] I recommend
+
+![alt](assets/images/ouka.png)
+
+@snapend
+
+@snap[east span-50]
+
+@size[0.5em](りあクト！TypeScriptで始めるつらくないReact開発)
+@size[0.5em](大岡由佳)
+@size[0.5em](@oukayuka)
+
+## @snapend
 
 ---
 
