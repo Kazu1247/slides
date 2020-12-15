@@ -42,7 +42,7 @@
 
 ---
 
-<h4>で、isFetching を実装していたら思った課題</h4>
+<h4>@color[#5289F7](で、isFetching を実装していたら思った課題)</h4>
 
 - isFetching と isLoading が役割的に競合している（API やその他関数の処理中か終了したかを示すフラグ）
   - 同じ役割の変数が別で存在していると混乱するの無くしたい
@@ -53,7 +53,10 @@
 
 ## isFetching と isLoading が役割的に競合している
 
-- (isFetching | isLoading) ?
+@snap[north]
+
+<h4>(isFetching | isLoading) ?</h4>
+@snapend
 
 @snap[west span-45]
 
