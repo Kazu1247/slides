@@ -51,11 +51,10 @@
 
 ---
 
-## isFetching と isLoading が役割的に競合している
-
 @snap[north]
 
-<h4>(isFetching | isLoading) ?</h4>
+<h4>(isFetching | isLoading) ?</h4><br />
+<h5>isFetching と isLoading が役割的に競合している</h5>
 @snapend
 
 @snap[west span-45]
