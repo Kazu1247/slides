@@ -44,12 +44,16 @@
 
 <h4>@color[#5289F7](で、isFetching を実装していたら思った課題)</h4>
 
-- isFetching と isLoading が役割的に競合している（API やその他関数の処理中か終了したかを示すフラグ）
+- isFetching と isLoading が役割的に似ている
+  <br />
   - 同じ役割の変数が別で存在していると混乱するの無くしたい
 - true 条件下でのロジックが各 Component で似ている
+  <br />
   - ついでに、重複した部分はなるべく無くしたい
 
 ---
+
+<h4>(isFetching | isLoading) ?</h4>
 
 @snap[west]
 
@@ -65,8 +69,6 @@
 
 ---
 
-## true 条件下でのロジックが各 Component で似ている
-
 ![alt](assets/images/isLoading-example.png)
 
 ---
@@ -79,11 +81,13 @@
 
 ---
 
-## しかし...
+## Suspense
+
+---
 
 ![alt](assets/images/suspense-note.png)
 
-## なのでまだサービスに利用できないぽいけど紹介だけ
+なのでまだサービスに利用できないぽいけど紹介だけ
 
 ---
 
@@ -101,7 +105,7 @@ React 16.6 で、コードのロードを「待機」して宣言的にロード
 
 ---
 
-## データ取得用の Suspense
+<h4>データ取得用の Suspense</h4>
 
 https://ja.reactjs.org/docs/optimizing-performance.html
 
@@ -113,13 +117,15 @@ https://ja.reactjs.org/docs/optimizing-performance.html
 
 ---
 
-## サスペンスは何でないのか
+<h4>サスペンスは何でないのか</h4>
 
-- データ取得の実装ではありません。
+- データ取得の実装ではない。
+  <br />
 
   - REST, GraphQL ではない
 
 - データ取得をビューレイヤと密結合はさせない。
+  <br />
   - ロード中の状態を UI で表示するための補助とはなるが、React コンポーネントとネットワークの関係のロジックと結合させるものではない。
 
 ---
