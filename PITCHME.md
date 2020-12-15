@@ -16,9 +16,25 @@
 
 ---
 
-@snap[midpoint span50]
+@snap[north]
 
-## Before
+<h4>Before</h4>
+@snapend
+
+@snap[west]
+
+@ul
+
+- There are
+- Many reasons
+- To @fa[heart]
+- [GitPitch](https://gitpitch.com)
+- Presentations
+  @ulend
+
+@snapend
+
+@snap[east]
 
 ![alt](assets/images/redux-before.png)
 
