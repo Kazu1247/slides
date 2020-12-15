@@ -57,10 +57,9 @@
 <h5>(isFetching | isLoading) ?</h5>
 @snapend
 
-<br /><br /><br />
 @snap[west span-45]
 
-![alt](assets/images/spinner.png)
+![drag=width height, drop=x y, stretch=true](assets/images/spinner.png)
 
 @snapend
 
