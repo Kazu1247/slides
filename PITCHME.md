@@ -51,13 +51,13 @@
 
 ---
 
-@snap
+@snap[west]
 
 ![alt](assets/images/spinner.png)
 
 @snapend
 
-@snap
+@snap[east]
 
 ![alt](assets/images/isFetching-false.png)
 
