@@ -61,6 +61,8 @@
 
 ![alt](assets/images/spinner.png)
 
+@snapend
+
 @snap[east span-50]
 
 ![alt](assets/images/isFetching-false.png)
