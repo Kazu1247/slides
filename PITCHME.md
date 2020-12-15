@@ -2,100 +2,134 @@
 
 <br />
 
-## - Redux-Thunk の導入 -
+## - Suspense を使用したデータ取得 -
 
-2020/10/28 小林
-
----
-
-- なぜ、ミドルウェアを導入すべきなのか
-- Redux-Thunk の特徴について
+2020/12/16 小林
 
 ---
 
-なぜ、ミドルウェアを導入すべきなのか
+- やろうとしているリファクタリング
+  - Redux 移行
+- Suspense について
+  - Suspense とは
+  - 既存アプローチ vs Suspense
 
 ---
 
-## ミドルウェアがない場合とある場合では何が違うのか？
+- Before
+  ![alt](assets/images/redux-before.png)
 
 ---
 
-非同期処理を伴う外部通信、API をどう扱うかが変わってくる
+- After
+  ![alt](assets/images/redux-after.png)
 
 ---
 
-## ミドルウェアを使わない場合、
+## で、isFetching を実装していたら思った課題
 
-- React コンポーネント内部に処理を置く
-
-  - ライフサイクルメソッド
-  - イベントハンドラで呼ばれる関数
-
-- その結果をローカル state に格納してコンポーネント内部で使い回す
-
----?code=sideEffect_without_middleWare.tsx
+- isFetching と isLoading が役割的に競合している（API やその他関数の処理中か終了したかを示すフラグ）
+  → 同じ役割の変数が別で存在していると混乱するの無くしたい
+- true 条件下でのロジックが各 Component で似ている
+  → ついでに、重複した部分はなるべく無くしたい
 
 ---
 
-このやり方だと、規模が大きくなるにつれれ様々な問題が出てくる
+## isFetching と isLoading が役割的に競合している
+
+- (isFetching | isLoading) ?
+
+@snap[west span-45]
+
+![alt](assets/images/spinner.png)
+
+@snapend
+
+@snap[east span-50]
+
+![alt](assets/images/isFetching-true.png)
+
+@snapend
 
 ---
 
-## 問題点
+## true 条件下でのロジックが各 Component で似ている
 
-- コンポーネントと副作用を伴うロジックが密結合になる
-
-  - メンテナンスコスト
-  - テストしにくい
-  - 再利用できないか取得したデータは使い捨てになる
-
-- ライフサイクルメソッドを使う場合は、重複したコードを書くことになる
-  - componentDidMount と componentDidUpdate
+![alt](assets/images/isLoading-example.png)
 
 ---
 
-## そこで、ミドルウェアを使おうという選択肢
+## なんかここらへんをスッキリさせたい 🤔
 
 ---
 
-- 非同期処理を含む処理を切り出して、独立させる
-- 同じロジックの使い回しが 可能になる
+## あった...！
 
 ---
 
-## React ミドルウェアの御三家
+## しかし...
 
-### Redux-Thunk vs Redux-Saga vs Redux-Observable
+![alt](assets/images/suspense-note.png)
 
-![alt](assets/images/npm_trends_thunk.png)
-
----
-
-## Redux-Thunk のしくみ
+## なのでまだサービスに利用できないぽいけど紹介だけ
 
 ---
 
-## まず、Redux のデータフロー
+## Suspense とは
 
-![alt](assets/images/redux.png)
-
-dispatch: "発送する","派遣する"<br />
-reduce: "還元する"
+React 16.6 で、コードのロードを「待機」して宣言的にロード中状態（スピナーのようなもの）を指定することができる <Suspense> コンポーネント
 
 ---
 
-## Redux-Thunk のデータフロー
+## 宣言型とは、
 
-![alt](assets/images/redux_thunk.png)
+ここにはこのデ ータが入るべき。後はそっちでよしなにやってくれ！』的なアプローチね。
+
+⇆ 命令型：最終的な出力を得るために、その手順を 時系列に沿って書き下していくプログラミングのあり方
 
 ---
 
-## Redux-Thunk とは、
+## データ取得用の Suspense
 
-①dispatcher を拡張して、<br />
-② 純粋な action オブジェクト以外にも副作用を
-含む関数や Promise オブジェクトを dispatch できるようにするミドルウェア
+https://ja.reactjs.org/docs/optimizing-performance.html
+
+![alt](assets/images/suspense-sample.png)
+
+---
+
+## デモ！
+
+---
+
+## サスペンスは何でないのか
+
+- データ取得の実装ではありません。
+
+  - REST, GraphQL ではない
+
+- データ取得をビューレイヤと密結合はさせない。
+  - ロード中の状態を UI で表示するための補助とはなるが、React コンポーネントとネットワークの関係のロジックと結合させるものではない。
+
+---
+
+## サスペンスは何ができるのか
+
+- ロード中状態の表示を設計することが容易になる
+
+  - データがどのように取得されるのかについて関知しないが、アプリケーションのローディングシーケンスを細かく制御することができるようになります。
+
+- 競合状態 (race condition) を避ける手助けになります。
+  - await を使っていてすら、非同期のコードはエラーを起こしがちです。サスペンスを使うことで、データが同期的に読み出されているかのように、まるで既にロード済みであるかのように感じられます。（≒ 宣言型）
+
+---
+
+## 既存アプローチ vs Suspense
+
+![alt](assets/images/fetch-on-render-vs-suspense.png)
+
+- 画面上にコンポーネントがレンダーされた後までデータ取得が始まらないので、このアプローチのことを “fetch-on-render” と呼ぶことにします。これは “ウォーターフォール” と呼ばれる問題を引き起こします。
+
+- ユーザ詳細情報の取得に 3 秒かかる場合、投稿の取得の開始が 3 秒後になってしまいます！ これが「ウォーターフォール」、つまり並列化可能にもかかわらず意図せず混入してしまったシーケンスです。
 
 ---
 
