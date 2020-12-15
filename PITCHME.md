@@ -53,8 +53,8 @@
 
 @snap[north]
 
+<h4>@color[#5289F7](isFetching と isLoading が役割的に競合している)</h4>
 <h4>(isFetching | isLoading) ?</h4><br />
-<h5>isFetching と isLoading が役割的に競合している</h5>
 @snapend
 
 @snap[west span-45]
@@ -65,7 +65,7 @@
 
 @snap[east span-50]
 
-![alt](assets/images/isFetching-true.png)
+![alt](assets/images/isFetching-false.png)
 
 @snapend
 
