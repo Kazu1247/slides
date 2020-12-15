@@ -57,7 +57,7 @@
 <h4>(isFetching | isLoading) ?</h4><br />
 @snapend
 
-@snap[south]
+<br /><br /><br />
 @snap[west span-45]
 
 ![alt](assets/images/spinner.png)
@@ -68,7 +68,6 @@
 
 ![alt](assets/images/isFetching-false.png)
 
-@snapend
 @snapend
 
 ---
