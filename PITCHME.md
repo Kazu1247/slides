@@ -57,9 +57,9 @@
 <h5>(isFetching | isLoading) ?</h5>
 @snapend
 
-<div style {{ margin-top: 100px }}>
+@snap[west span-80]
+
 ![alt](assets/images/spinner.png)
-<div>
 
 @snap[east span-50]
 
