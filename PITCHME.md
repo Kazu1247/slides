@@ -57,7 +57,7 @@
 <h5>(isFetching | isLoading) ?</h5>
 @snapend
 
-@snap[west span-80]
+@snap[west south span-80]
 
 ![alt](assets/images/spinner.png)
 
