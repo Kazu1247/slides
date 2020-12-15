@@ -17,7 +17,12 @@
 ---
 
 - Before
-  ![alt](assets/images/redux-before.png)
+
+@snap[west span-45]
+
+![alt](assets/images/redux-before.png)
+
+@snapend
 
 ---
 
