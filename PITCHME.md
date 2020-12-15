@@ -29,17 +29,25 @@
 
 ---
 
-- After
-  ![alt](assets/images/redux-after.png)
+@snap[north]
+
+<h4>After</h4>
+@snapend
+
+@snap[east]
+
+![alt](assets/images/redux-after.png)
+
+@snapend
 
 ---
 
-## で、isFetching を実装していたら思った課題
+<h4>で、isFetching を実装していたら思った課題</h4>
 
 - isFetching と isLoading が役割的に競合している（API やその他関数の処理中か終了したかを示すフラグ）
-  → 同じ役割の変数が別で存在していると混乱するの無くしたい
+  - 同じ役割の変数が別で存在していると混乱するの無くしたい
 - true 条件下でのロジックが各 Component で似ている
-  → ついでに、重複した部分はなるべく無くしたい
+  - ついでに、重複した部分はなるべく無くしたい
 
 ---
 
