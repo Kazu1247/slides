@@ -59,7 +59,7 @@
 
 @snap[west span-45]
 
-![drag=100 100, drop=right, stretch=false](assets/images/spinner.png)
+![alt](assets/images/spinner.png)
 
 @snapend
 
