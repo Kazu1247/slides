@@ -16,9 +16,9 @@
 
 ---
 
-- Before
+## Before
 
-@snap[west span-45]
+@snap[midpoint span50]
 
 ![alt](assets/images/redux-before.png)
 
