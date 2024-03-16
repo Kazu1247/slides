@@ -1,5 +1,0 @@
-useEffect = () => {
-  doSomething();
-
-  return clearSomething;
-};
